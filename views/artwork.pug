@@ -1,0 +1,54 @@
+html
+    head 
+        title Artwork  
+        link(rel='stylesheet', href='../Artstyles.css')
+        script(src="../artwork.js")
+    body(onload="init()") 
+        include ../partials/header
+        br
+        h1(id="artname") #{art[0].name}
+        div.containerArt
+            div.artPage
+                div.facts
+                    h3 Description: #{art[0].description}
+                    h3 Some facts about this artwork
+                    ul
+                        li(id="artist") Artist: 
+                            span(id="artist-name") #{art[0].artist}
+                        li Year: #{art[0].year}
+                        li(id="category") Category:
+                            span(id="category-name") #{art[0].category}
+                    
+                        li(id="medium") Medium:
+                            span(id="medium-name") #{art[0].medium}
+                div.image
+                    -var source = art[0].image
+                    img(src= source, class="Art")
+                
+            div.reviews
+                -var length = likes
+                h3 Likes and Reviews
+                br
+                h4 Total likes for this artwork: #{likes}
+                h4 Show your support by liking the artwork below:
+                button(id="submit-like", type="button") Like this artwork
+                br
+                br
+                label(for="review" class="review-label") Enter your Review
+                br
+                textarea(name="review", cols="30", rows="5",id="review-text")
+                br
+                button(id="submit-review", type="submit") Submit Review
+                br
+                -var allReviews = reviews
+                br
+                for review in allReviews
+                    div.review
+                        p Review by: #{review.user}
+                        p #{review.review}
+                    br
+
+            
+
+
+

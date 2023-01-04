@@ -1,0 +1,37 @@
+doctype html
+html
+    head 
+        title Add Artwork
+        script(src="../addartwork.js")
+        link(rel='stylesheet', href='../Artstyles.css')
+    body(onload="init()") 
+        include ../partials/header
+        br
+        h1 Add an artwork
+        div.addart
+            label(for="artname" class="addart") Artwork Name:  
+            input(type="text", name="artname", id="artwork-name")
+            br
+            br
+            label(for="artyear" class="addart") Year:  
+            input(type="text", name="artyear", id="artwork-year")
+            br
+            br
+            label(for="artcategory" class="addart") Category:  
+            input(type="text", name="artcategory", id="artwork-category")
+            br
+            br
+            label(for="artmedium" class="addart") Medium:  
+            input(type="text", name="artmedium", id="artwork-medium")
+            br
+            br
+            label(for="artdesc" class="addart") Description:
+            br
+            textarea(name="artdesc", id="artwork-description", cols="30", rows="5")
+            br
+            br
+            label(for="artlink" class="addart") Image Link:  
+            input(type="text", name="artlink", id="artwork-link")
+            br
+            br
+            button(id="submit-art") Submit Artwork

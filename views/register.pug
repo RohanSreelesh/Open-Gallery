@@ -1,0 +1,25 @@
+doctype html
+html
+    head 
+        title Register User
+    body 
+        include ../partials/loginHeader
+        br
+        - var register = duplicateUser
+        if(register)
+            h1 The username already exists please choose another one
+        div.login
+            form(action ="/register" , method="POST")
+                label(for="username" class="login") Username:
+                input(type="text", name="username", id="login-username")
+                br
+                br
+                label(for="password" class="login") Password:
+                input(type="password", name="password", id="login-password")
+                br
+                br
+                label(for="age" class="login") Age:
+                input(type="text", name="age", id="login-age")
+                br
+                br
+                button(type="submit") Submit

@@ -1,0 +1,15 @@
+doctype html
+html
+    head 
+        title Manage Artists
+    body 
+        include ../partials/header
+        br
+        h1 These are the artists you follow (you can unfollow them by clicking on the links)
+        div.results
+            ul
+                for i in follows
+                    for element in i.followed
+                        a(href="/artist/profile/" +element)
+                            li= element
+

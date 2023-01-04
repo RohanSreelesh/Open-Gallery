@@ -1,0 +1,19 @@
+doctype html
+html
+    head 
+        title Add Workshop
+        script(src="../addworkshop.js")
+    body(onload="init()") 
+        include ../partials/header
+        br
+        h1 Add a workshop
+        div.addart
+            label(for="workname" class="addwork") Workshop Name:   
+            input(type="text", name="workname", id="work-name")
+            br
+            br
+            label(for="workage" class="addwork") Miniumum age:   
+            input(type="text", name="workage", id="work-age")
+            br
+            br
+            button(id="add-workshop" value=username) Add Workshop

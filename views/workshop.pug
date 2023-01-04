@@ -1,0 +1,14 @@
+doctype html
+html
+    head 
+        title Workshop registration  
+    body 
+        include ../partials/header
+        br
+        h1 List of users that are registered to this workshop
+        div.results
+            ul
+                for element in users     
+                        li= element
+
+

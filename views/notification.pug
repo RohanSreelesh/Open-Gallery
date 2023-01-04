@@ -1,0 +1,13 @@
+doctype html
+html
+    head 
+        title Notifications
+    body 
+        include ../partials/header
+        br
+        h1 Here are your notifications
+        div.notifs
+            ol
+                for element in list     
+                    for notif in element.notifs
+                        li= notif

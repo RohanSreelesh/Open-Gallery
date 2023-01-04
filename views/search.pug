@@ -1,0 +1,23 @@
+doctype html
+html
+    head 
+        title Search Page  
+    body 
+        include ../partials/header
+        br
+        h1 Search for your favorite artwork
+        div.search
+            form(action ="/search/1" , method="POST")
+                label(for="artname" class="search") Artwork Name:
+                input(type="text", name="artname", id="artwork-name")
+                br
+                br
+                label(for="artistname" class="search") Artist Name:
+                input(type="text", name="artistname", id="artwork-artist")
+                br
+                br
+                label(for="artistcategory" class="search") Category:
+                input(type="text", name="artistcategory", id="artwork-category")
+                br
+                br
+                button(type="submit") Search

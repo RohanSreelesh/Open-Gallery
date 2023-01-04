@@ -1,0 +1,32 @@
+html
+    head 
+        title Profile  
+        link(rel='stylesheet', href='../../Artstyles.css')
+        script(src="../../../artist.js")
+    body(onload="init()") 
+        include ../partials/header
+        if curUser 
+            h1 Welcome to your artist profile 
+        else 
+            h1 Welcome to #{artworks[0].artist}'s profile
+                if follow
+                    button(id="follow",value=artworks[0].artist) Follow
+                else 
+                    button(id="unfollow",value=artworks[0].artist) Unfollow
+        h3 These are the artworks by this artist
+        if curUser
+            button(id="addartwork") Add a new artwork
+        ul
+            for artwork in artworks 
+                for art in artwork.artwork
+                    a(href="http://localhost:3000/artwork/" + art)
+                        li= art
+        h3 These are the workshops by this artist
+        if curUser
+            button(id="addworkshop") Add a new workshop
+        ul 
+            for workshop in workshops 
+                a(href="http://localhost:3000/artist/workshop/"+workshop.name)
+                    li= workshop.name
+                if !curUser 
+                    button(id="register", value=workshop.name) Register for this workshop

@@ -1,0 +1,18 @@
+html
+    head 
+        title Profile  
+        //link(rel='stylesheet', href='../Artstyles.css')
+        script(src="../remove.js")
+    body(onload="init()") 
+        include ../partials/header
+        h2 Your reviews were on the following artworks: 
+        ul 
+            for review in reviews
+                li= review.artwork
+                button(id="remove-review", value=review.artwork) Remove this review
+        h2 Your Likes were on the following artworks: 
+        ul 
+            for like in likes
+                li= like.artwork
+                button(id="remove-like", value=like.artwork) Remove this like
+

@@ -1,0 +1,16 @@
+doctype html
+html
+    head 
+        title Search Results  
+        link(rel='stylesheet', href='../user.css')
+    body 
+        include ../partials/header
+        br
+        h1 Results for your search
+        div.results
+            ul
+                for element in list     
+                    a(href="/artwork/" +element.name)
+                        li= element.name
+
+

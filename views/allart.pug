@@ -1,0 +1,14 @@
+doctype html
+html
+    head 
+        title Search Results  
+        
+    body 
+        include ../partials/header
+        br
+        h1 All artworks
+        div.results
+            ul
+                for element in list     
+                    a(href="/artwork/" +element.name)
+                        li= element.name

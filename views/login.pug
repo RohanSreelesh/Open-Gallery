@@ -1,0 +1,19 @@
+doctype html
+html
+    head 
+        title Login Page  
+    body 
+        include ../partials/loginHeader
+        br
+        h1 Login here ^_^
+        div.login
+            form(action ="/login" , method="POST")
+                label(for="username" class="login") Username:
+                input(type="text", name="username", id="login-username")
+                br
+                br
+                label(for="password" class="login") Password:
+                input(type="password", name="password", id="login-password")
+                br
+                br
+                button(type="submit") Submit

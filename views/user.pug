@@ -1,0 +1,27 @@
+html
+    head 
+        title Profile  
+        link(rel='stylesheet', href='../user.css')
+        script(src="../user.js")
+    body(onload="init()") 
+
+        include ../partials/header
+        h1 #{user} , Welcome to your profile
+        h3 Here are somethings to do
+        ul 
+            a(href="http://localhost:3000/search")
+                li Use our search engine to view artworks
+            a(href="http://localhost:3000/user/manageartist")
+                li View and manage artists you follow
+            a(href="http://localhost:3000/user/managereview")
+                li View and manage your likes or reviews
+            a(href="http://localhost:3000/user/viewnotifs")
+                li View your notifications
+            if artist 
+                a(href="http://localhost:3000/artist/profile/"+user)
+                    li View your artist page
+        
+        button(id="switch") Switch Account Type
+            
+            
+
